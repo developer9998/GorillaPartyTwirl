@@ -18,7 +18,7 @@ namespace GorillaPartyTwirl
             if (RefCache.PartyHorn)
             {
                 float difference = Time.deltaTime / RefCache.Cooldown;
-                Instance.Turn(difference * 360f);
+                Instance.Turn(difference * 360f * (Mathf.PI / 2f) * Mathf.Sin(RefCache.Delta * (Mathf.PI / 2f)));
 
                 RefCache.Delta -= difference;
                 if (RefCache.Delta < 0) RefCache.PartyHorn = null;
