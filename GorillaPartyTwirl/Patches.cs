@@ -15,7 +15,7 @@ namespace GorillaPartyTwirl
             if (isValid && isReasonable)
             {
                 RefCache.PartyHorn = __instance;
-                RefCache.Cooldown = __instance.cooldown / 2.5f;
+                RefCache.Cooldown = __instance.cooldown / (__instance.IsMyItem() ? 2.5f : 1.5f);
                 RefCache.Delta = 1f;
             }
         }
